@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
-Route::get('', function() {
-    return "Hello!";
+Route::get('', function () {
+    return 'test';
 });
