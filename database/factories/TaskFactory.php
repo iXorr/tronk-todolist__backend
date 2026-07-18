@@ -16,7 +16,7 @@ class TaskFactory extends Factory
             'user_id' => User::factory(),
             'title' => fake()->sentence(4),
             'description' => fake()->optional()->paragraph(),
-            'due_date' => fake()->optional()->dateTimeBetween('now', '+30 days'),
+            'due_date' => fake()->dateTimeBetween('now', '2026-12-31'),
             'status' => fake()->randomElement(TaskStatus::cases()),
         ];
     }
