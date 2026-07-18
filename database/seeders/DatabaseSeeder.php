@@ -15,12 +15,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
         ]);
 
-        $user = User::factory()->create([
-            'name' => 'User',
-            'email' => 'user@example.com',
-        ]);
-
         Task::factory()->count(7)->for($admin)->create();
-        Task::factory()->count(5)->for($user)->create();
+
+        foreach (range(1, 3) as $i) {
+            $user = User::factory()->create([
+                'name' => "User {$i}",
+                'email' => "user{$i}@example.com",
+            ]);
+
+            Task::factory()->count(5)->for($user)->create();
+        }
     }
 }
